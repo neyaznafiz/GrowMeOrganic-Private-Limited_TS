@@ -3,6 +3,7 @@ import { useNavigate } from "react-router-dom";
 import Box from "@mui/material/Box";
 import { DataGrid } from "@mui/x-data-grid";
 import DataTable from "../components/DataTable";
+import Sidebar from "../components/Sidebar";
 
 const Home: React.FC = () => {
   const navigate = useNavigate();
@@ -24,7 +25,9 @@ const Home: React.FC = () => {
   }, []);
 
   return (
-    <Box sx={{ height: 900, width: "100%" }}>
+    <Box sx={{ height: 900, width: "100%", display:"flex", gap: 2 }}>
+
+      <Sidebar/>
       <DataGrid
         rows={data}
         columns={DataTable}

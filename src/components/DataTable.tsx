@@ -11,7 +11,7 @@ const DataTable: Data[] = [
   {
     field: "body",
     headerName: "Details",
-    width: 1200,
+    width: 900,
   },
 ];
 

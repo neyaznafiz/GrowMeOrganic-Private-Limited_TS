@@ -56,8 +56,8 @@ const Authentication: React.FC = () => {
         }}
       >
         {/* icon */}
-        <Avatar sx={{ m: 2, width: 56, height: 56 }}>
-          <LockOutlinedIcon />
+        <Avatar sx={{ m: 2, width: 70, height: 70 }}>
+          <LockOutlinedIcon sx={{ width: 40, height: 40 }} />
         </Avatar>
 
         {/* title */}
@@ -107,7 +107,14 @@ const Authentication: React.FC = () => {
             fullWidth
             variant="contained"
             size="large"
-            sx={{ mt: 3, mb: 2 }}
+            sx={{
+              mt: 3,
+              mb: 2,
+              bgcolor: "darkcyan",
+              color: "white",
+              boxShadow:
+                " 0 4px 10px 0 rgba(0, 0, 0, 0.2), 0 6px 30px 0 rgba(0, 0, 0, 0.05)",
+            }}
           >
             Sign In
           </Button>
