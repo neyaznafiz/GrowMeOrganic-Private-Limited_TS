@@ -88,6 +88,7 @@ const Authentication = () => {
               autoComplete="email"
             />
 
+            {/* sign in button */}
             <Button
               type="submit"
               fullWidth
