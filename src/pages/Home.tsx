@@ -1,11 +1,14 @@
-import React from 'react';
+import React from "react";
+import { useNavigate } from "react-router-dom";
 
 const Home = () => {
-    return (
-        <div>
-            home
-        </div>
-    );
+  const user = localStorage.getItem("user");
+  const navigate = useNavigate();
+  if (!user) {
+    navigate("/authentication");
+  }
+
+  return <div>home </div>;
 };
 
 export default Home;
