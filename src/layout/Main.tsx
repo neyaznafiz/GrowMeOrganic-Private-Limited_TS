@@ -1,13 +1,13 @@
-import React from 'react';
-import { Outlet } from 'react-router-dom';
-import Box from '@mui/material/Box';
+import React from "react";
+import { Outlet } from "react-router-dom";
+import Box from "@mui/material/Box";
 
-const Main = () => {
-    return (
-        <Box>
-            <Outlet/>
-        </Box>
-    );
+const Main: React.FC = () => {
+  return (
+    <Box>
+      <Outlet />
+    </Box>
+  );
 };
 
 export default Main;

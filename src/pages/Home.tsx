@@ -5,13 +5,13 @@ import { DataGrid } from "@mui/x-data-grid";
 import DataTable from "../components/DataTable";
 
 const Home: React.FC = () => {
+  const navigate = useNavigate();
   const [data, setData] = useState([]);
 
   // get user info from local storage
   const user: string | null = localStorage.getItem("user");
 
-  // navigate to authentication page if user does'n exist in local storage
-  const navigate = useNavigate();
+  // navigate to authentication page if user info does'n exist in local storage
   if (!user) {
     navigate("/authentication");
   }

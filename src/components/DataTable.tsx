@@ -1,8 +1,6 @@
 import React from "react";
 import { Data } from "../types/DataTypes";
 
-
-
 const DataTable: Data[] = [
   { field: "id", headerName: "ID", width: 90 },
   {

@@ -12,6 +12,8 @@ import { toast } from "react-toastify";
 
 const Authentication: React.FC = () => {
   const navigate = useNavigate();
+  const location = useLocation();
+
   // authentication function
   const handleSubmit = (event: ChangeEvent<HTMLFormElement | undefined>) => {
     event.preventDefault();
@@ -21,6 +23,7 @@ const Authentication: React.FC = () => {
       phone: data.get("phone"),
       email: data.get("email"),
     };
+    // store user info into local storage
     if (
       userInfo.name !== "" &&
       userInfo.phone !== "" &&
@@ -30,14 +33,14 @@ const Authentication: React.FC = () => {
       navigate("/");
       toast.success("Congratulation! You have successfully loged in.");
     } else {
+      // error message
       toast.error(
-        " Yout must have to enter your details before accessing the application."
+        "Yout must have to enter your details before accessing the application."
       );
     }
   };
 
   // when user rerote to authentication page, localstorage will be cleared
-  const location = useLocation();
   if (location.pathname === "/authentication") {
     localStorage.removeItem("user");
   }
@@ -62,7 +65,7 @@ const Authentication: React.FC = () => {
           Put your information
         </Typography>
 
-        {/* input sention */}
+        {/* form sention */}
         <Box component="form" onSubmit={handleSubmit} noValidate sx={{ mt: 1 }}>
           {/* name input */}
           <TextField
