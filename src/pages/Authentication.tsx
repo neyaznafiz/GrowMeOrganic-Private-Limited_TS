@@ -8,6 +8,7 @@ import Typography from "@mui/material/Typography";
 import Container from "@mui/material/Container";
 import { useNavigate } from "react-router-dom";
 import { PostUser } from "../types/AuthenticationTypes";
+import { toast } from "react-toastify";
 
 const Authentication: React.FC = () => {
   const navigate = useNavigate();
@@ -21,9 +22,17 @@ const Authentication: React.FC = () => {
       phone: data.get("phone"),
       email: data.get("email"),
     };
-    localStorage.setItem("user", JSON.stringify(userInfo));
-
-    navigate("/");
+    if (
+      userInfo.name !== "" &&
+      userInfo.phone !== "" &&
+      userInfo.email !== ""
+    ) {
+      localStorage.setItem("user", JSON.stringify(userInfo));
+        navigate("/");
+        toast.success("Congratulation! You have successfully loged in.")
+    } else {
+      toast.error(" Yout must have to enter your details before accessing the application.")
+    }
   };
 
   return (
@@ -51,7 +60,7 @@ const Authentication: React.FC = () => {
           {/* name input */}
           <TextField
             margin="normal"
-            required
+            required={true}
             fullWidth
             id="name"
             label="Name"
@@ -63,7 +72,7 @@ const Authentication: React.FC = () => {
           {/* phone input */}
           <TextField
             margin="normal"
-            required
+            required={true}
             fullWidth
             id="phone"
             label="Phone Number"
@@ -74,7 +83,7 @@ const Authentication: React.FC = () => {
           {/* email input */}
           <TextField
             margin="normal"
-            required
+            required={true}
             fullWidth
             id="email"
             label="Email Address"
