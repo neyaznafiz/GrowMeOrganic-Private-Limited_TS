@@ -1,11 +1,12 @@
 import React from 'react';
 import { Outlet } from 'react-router-dom';
+import Box from '@mui/material/Box';
 
 const Main = () => {
     return (
-        <div>
+        <Box>
             <Outlet/>
-        </div>
+        </Box>
     );
 };
 

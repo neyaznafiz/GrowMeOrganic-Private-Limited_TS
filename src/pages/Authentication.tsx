@@ -6,13 +6,12 @@ import Box from "@mui/material/Box";
 import LockOutlinedIcon from "@mui/icons-material/LockOutlined";
 import Typography from "@mui/material/Typography";
 import Container from "@mui/material/Container";
-import { useNavigate } from "react-router-dom";
+import { useLocation, useNavigate } from "react-router-dom";
 import { PostUser } from "../types/AuthenticationTypes";
 import { toast } from "react-toastify";
 
 const Authentication: React.FC = () => {
   const navigate = useNavigate();
-
   // authentication function
   const handleSubmit = (event: ChangeEvent<HTMLFormElement | undefined>) => {
     event.preventDefault();
@@ -28,12 +27,20 @@ const Authentication: React.FC = () => {
       userInfo.email !== ""
     ) {
       localStorage.setItem("user", JSON.stringify(userInfo));
-        navigate("/");
-        toast.success("Congratulation! You have successfully loged in.")
+      navigate("/");
+      toast.success("Congratulation! You have successfully loged in.");
     } else {
-      toast.error(" Yout must have to enter your details before accessing the application.")
+      toast.error(
+        " Yout must have to enter your details before accessing the application."
+      );
     }
   };
+
+  // when user rerote to authentication page, localstorage will be cleared
+  const location = useLocation();
+  if (location.pathname === "/authentication") {
+    localStorage.removeItem("user");
+  }
 
   return (
     <Container component="main" maxWidth="xs">
