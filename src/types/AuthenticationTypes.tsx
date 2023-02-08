@@ -1,6 +1,7 @@
 // user data types
-export interface User {
+export interface PostUser {
   name: FormDataEntryValue | null;
   phone: FormDataEntryValue | null;
   email: FormDataEntryValue | null;
 }
+

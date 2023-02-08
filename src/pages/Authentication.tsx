@@ -7,7 +7,7 @@ import LockOutlinedIcon from "@mui/icons-material/LockOutlined";
 import Typography from "@mui/material/Typography";
 import Container from "@mui/material/Container";
 import { useNavigate } from "react-router-dom";
-import { User } from "../types/AuthenticationTypes";
+import { PostUser } from "../types/AuthenticationTypes";
 
 const Authentication: React.FC = () => {
   const navigate = useNavigate();
@@ -16,7 +16,7 @@ const Authentication: React.FC = () => {
   const handleSubmit = (event: ChangeEvent<HTMLFormElement | undefined>) => {
     event.preventDefault();
     const data = new FormData(event.currentTarget);
-    const userInfo: User = {
+    const userInfo: PostUser = {
       name: data.get("name"),
       phone: data.get("phone"),
       email: data.get("email"),

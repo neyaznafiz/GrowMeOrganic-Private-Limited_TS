@@ -2,7 +2,7 @@ import { RouterProvider } from "react-router-dom";
 import { routes } from "./routes/routes";
 import { Box } from "@mui/material";
 
-function App() {
+const App: React.FC = () => {
   return (
     <Box>
       <RouterProvider router={routes} />
