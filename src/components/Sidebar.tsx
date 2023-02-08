@@ -3,7 +3,7 @@ import { Avatar, Box, Button, Divider, Typography } from "@mui/material";
 import { borderRadius } from "@mui/system";
 import { useNavigate } from "react-router-dom";
 
-const Sidebar = () => {
+const Sidebar: React.FC  = () => {
   const navigate = useNavigate();
   const user = JSON.parse(localStorage.getItem("user") || "{}");
 
