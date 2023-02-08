@@ -1,7 +1,7 @@
 export const inputStyling = {
-    "& label": {
-      "&.Mui-focused": {
-        color: "cadetblue",
-      },
-    }
-  };
+  "& label": {
+    "&.Mui-focused": {
+      color: "cadetblue",
+    },
+  },
+};

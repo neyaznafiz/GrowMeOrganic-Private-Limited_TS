@@ -7,6 +7,7 @@ const Sidebar: React.FC  = () => {
   const navigate = useNavigate();
   const user = JSON.parse(localStorage.getItem("user") || "{}");
 
+  // signout function
   const handleSignout = () => {
     localStorage.removeItem("user");
     navigate("/authentication");
