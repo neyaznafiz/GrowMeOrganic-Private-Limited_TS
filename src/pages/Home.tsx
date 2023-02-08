@@ -23,17 +23,15 @@ const Home = () => {
   }, []);
 
   return (
-    <div>
-      <Box sx={{ height: 900, width: "100%" }}>
-        <DataGrid
-          rows={data}
-          columns={DataTable}
-          rowsPerPageOptions={[5]}
-          experimentalFeatures={{ newEditingApi: true }}
-          sx={{ padding: 1 }}
-        />
-      </Box>
-    </div>
+    <Box sx={{ height: 900, width: "100%" }}>
+      <DataGrid
+        rows={data}
+        columns={DataTable}
+        rowsPerPageOptions={[5]}
+        experimentalFeatures={{ newEditingApi: true }}
+        sx={{ padding: 1 }}
+      />
+    </Box>
   );
 };
 
