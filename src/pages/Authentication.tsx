@@ -9,6 +9,7 @@ import Container from "@mui/material/Container";
 import { useLocation, useNavigate } from "react-router-dom";
 import { PostUser } from "../types/AuthenticationTypes";
 import { toast } from "react-toastify";
+import { inputStyling } from "../style/FormStyle";
 
 const Authentication: React.FC = () => {
   const navigate = useNavigate();
@@ -77,6 +78,7 @@ const Authentication: React.FC = () => {
             name="name"
             autoComplete="name"
             autoFocus
+            sx={inputStyling}
           />
 
           {/* phone input */}
@@ -88,6 +90,7 @@ const Authentication: React.FC = () => {
             label="Phone Number"
             name="phone"
             autoComplete="phone"
+            sx={inputStyling}
           />
 
           {/* email input */}
@@ -99,6 +102,7 @@ const Authentication: React.FC = () => {
             label="Email Address"
             name="email"
             autoComplete="email"
+            sx={inputStyling}
           />
 
           {/* sign in button */}

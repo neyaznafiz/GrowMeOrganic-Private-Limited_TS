@@ -16,7 +16,6 @@ const Sidebar: React.FC  = () => {
     <Box
       sx={{
         width: 250,
-        border: "1px solid gray",
         borderRadius: "7px",
         padding: "0px 10px",
         bgcolor: "cadetblue",
